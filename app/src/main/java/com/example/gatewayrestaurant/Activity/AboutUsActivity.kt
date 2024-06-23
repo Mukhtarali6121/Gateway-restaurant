@@ -18,7 +18,6 @@ class AboutUsActivity : BaseActivity() {
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_about_us)
         supportActionBar!!.hide()
 
-
         mBinding.tvRestaurantName.paintFlags = mBinding.tvRestaurantName.paintFlags or Paint.UNDERLINE_TEXT_FLAG
         mBinding.toolbar.tvHeader.text = "About Us"
         mBinding.toolbar.ivBack.setOnClickListener{
