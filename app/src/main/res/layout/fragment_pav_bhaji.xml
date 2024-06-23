@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragment.PavBhajiFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSearch"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/edittext_border"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/white"
+                android:cursorVisible="true"
+                android:fontFamily="@font/cera_pro_medium"
+                android:hint="Search Dish..."
+                android:imeOptions="actionDone"
+                android:includeFontPadding="true"
+                android:paddingStart="6dp"
+                android:paddingEnd="5dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivSearchClear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSearchClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:src="@drawable/ic_rounded_close"
+                android:tint="@color/black"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDishList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            tools:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSearch"
+            app:layout_constraintVertical_bias="0"
+            tools:itemCount="3"
+            tools:listitem="@layout/southindiancardview" />
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clSearch"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

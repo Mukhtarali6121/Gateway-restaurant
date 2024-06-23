@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
+
+        <View
+            android:id="@+id/viewOrderNumber"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toStartOf="@+id/viewDate"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/viewDate"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintHorizontal_bias="0"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewItemOne"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintStart_toStartOf="@+id/viewOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/viewOrderNumber" />
+
+
+        <View
+            android:id="@+id/viewItemTwo"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintStart_toStartOf="@+id/viewOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/viewItemOne" />
+
+        <View
+            android:id="@+id/viewAmountOne"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/viewItemOne"
+            app:layout_constraintEnd_toEndOf="@+id/viewDate"
+            app:layout_constraintTop_toTopOf="@+id/viewItemOne" />
+
+        <View
+            android:id="@+id/viewAmountTwo"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/viewItemTwo"
+            app:layout_constraintEnd_toEndOf="@+id/viewDate"
+            app:layout_constraintTop_toTopOf="@+id/viewItemTwo" />
+
+        <View
+            android:id="@+id/viewAmountTotal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            android:layout_marginStart="@dimen/_60sdp"
+            app:layout_constraintEnd_toEndOf="@+id/viewDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewAmountTwo" />
+
+
+        <View
+            android:id="@+id/viewOrderType"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/viewDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewAmountTotal" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

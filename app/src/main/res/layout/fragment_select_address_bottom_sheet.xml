@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_12sdp"
+        tools:context=".Dialogs.SelectAddressBottomSheetFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSelectAddressStatic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="Select Delivery Address"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintEnd_toStartOf="@+id/tvViewAll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvViewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="View all"
+            android:textAllCaps="true"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSelectAddressStatic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSelectAddressStatic" />
+
+        <View
+            android:id="@+id/viewSelectAddress"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/backgrasoundGrey"
+            app:layout_constraintEnd_toEndOf="@+id/tvViewAll"
+            app:layout_constraintStart_toStartOf="@+id/tvSelectAddressStatic"
+            app:layout_constraintTop_toBottomOf="@+id/tvSelectAddressStatic" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddressList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintVertical_bias="0"
+            tools:itemCount="4"
+            tools:listitem="@layout/address_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewSelectAddress" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/cera_pro_bold"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            android:text="Add Address"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            android:visibility="visible"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvAddressList"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

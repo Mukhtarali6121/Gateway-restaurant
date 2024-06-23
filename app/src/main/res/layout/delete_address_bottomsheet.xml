@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_10sdp"
+        tools:context=".dialogs.DeleteAccountBottomSheetFragment">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConfirmationTitleStatic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:lineSpacingExtra="8dp"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="Are You Sure You Want To Delete This Address ?"
+            android:textAlignment="center"
+            android:textColor="@color/colorLightBlack"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDelete" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvDeleteAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_chip_red"
+            android:text="Delete"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCancel"
+            app:layout_constraintTop_toTopOf="@+id/tvCancel" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
+            android:background="@drawable/round_chip_grey_border_curve"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvDeleteAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvConfirmationTitleStatic"
+            app:layout_constraintVertical_bias="0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

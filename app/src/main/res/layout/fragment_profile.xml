@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGrey"
+        tools:context=".Fragment.ProfileFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/common_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clParent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvUserInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:backgroundTint="@color/colorMainLight"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/clParent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_12sdp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/CircleImageStocks"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:src="@drawable/example_image"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/CircleImageStocks"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/cera_pro_bold"
+                                android:text="Mukhtar Ali"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_17ssp" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:text="yopmail@yopmail.com"
+                                android:textColor="@color/colorLightBlack"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEditProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:visibility="gone"
+                                android:drawableRight="@drawable/ic_vector_right"
+                                android:drawableTint="@color/colorPrimary"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center"
+                                android:text="Edit Profile"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/_12ssp" />
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_8sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/cvUserInfo">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_16sdp">
+
+                        <LinearLayout
+                            android:id="@+id/tvYourOrder"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_vector_order_bag" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Order History"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/tvYourOrder"
+                            app:layout_constraintStart_toStartOf="@+id/tvYourOrder"
+                            app:layout_constraintTop_toBottomOf="@+id/tvYourOrder" />
+
+
+                        <LinearLayout
+                            android:id="@+id/tvAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/map_location" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Manage Address"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/tvAddress"
+                            app:layout_constraintStart_toStartOf="@+id/tvAddress"
+                            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+
+                        <LinearLayout
+                            android:id="@+id/tvCoupon"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_vector_coupon" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Coupon"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/tvCoupon"
+                            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCoupon" />
+
+
+                        <LinearLayout
+                            android:id="@+id/llAboutUs"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_vector_group_people" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="About Us"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/llAboutUs"
+                            app:layout_constraintStart_toStartOf="@+id/llAboutUs"
+                            app:layout_constraintTop_toBottomOf="@+id/llAboutUs" />
+
+
+                        <LinearLayout
+                            android:id="@+id/tvContactUs"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view4">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_contact_us" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Contact Us"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view5"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/tvContactUs"
+                            app:layout_constraintStart_toStartOf="@+id/tvContactUs"
+                            app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+
+
+                        <LinearLayout
+                            android:id="@+id/LlTermsAndCondition"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view5">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_terms_and_condition" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Terms And Condition"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/viewPrivacy"
+                            android:layout_width="0dp"
+                            android:layout_height="0.5dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintEnd_toEndOf="@+id/LlTermsAndCondition"
+                            app:layout_constraintStart_toStartOf="@+id/LlTermsAndCondition"
+                            app:layout_constraintTop_toBottomOf="@+id/LlTermsAndCondition" />
+
+
+                        <LinearLayout
+                            android:id="@+id/LlPrivacyPolicy"
+                            android:layout_width="0dp"
+                            android:layout_height="?actionBarSize"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/viewPrivacy">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:src="@drawable/ic_terms_and_condition" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="center|start"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:text="Privacy Policy"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:fontFamily="@font/cera_pro_medium"
+                                android:gravity="end"
+                                android:src="@drawable/ic_vector_right"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLogInOut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/rounded_button_accent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="Log Out"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    android:visibility="visible"
+                    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

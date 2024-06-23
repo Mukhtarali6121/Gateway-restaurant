@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_8sdp"
+        tools:context=".Fragment.HomeFragment">
+
+        <View
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toStartOf="@+id/tvViewAll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/tvViewAll"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCategory" />
+
+
+        <View
+            android:id="@+id/rvCategoryList"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/tvViewAll"
+            app:layout_constraintStart_toStartOf="@+id/tvCategory"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory"
+            />
+
+
+        <View
+            android:id="@+id/tvPopularStatic"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toStartOf="@+id/tvViewAll2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategoryList" />
+
+
+        <View
+            android:id="@+id/tvViewAll2"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPopularStatic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPopularStatic" />
+
+        <View
+            android:id="@+id/rvPopularItemList"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintStart_toStartOf="@+id/tvPopularStatic"
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularStatic"
+            />
+
+
+        <View
+            android:id="@+id/rvPopularItemList2"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintStart_toEndOf="@+id/rvPopularItemList"
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularStatic" />
+
+
+        <View
+            android:id="@+id/rvPopularItemList3"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/rvPopularItemList2"
+            app:layout_constraintTop_toBottomOf="@+id/tvPopularStatic" />
+
+        <View
+            android:id="@+id/tvOfferStatic"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toStartOf="@+id/tvViewAll3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvPopularItemList" />
+
+        <View
+            android:id="@+id/tvViewAll3"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOfferStatic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvOfferStatic" />
+
+        <View
+            android:id="@+id/rvOfferItemList"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/tvViewAll3"
+            app:layout_constraintStart_toStartOf="@+id/tvOfferStatic"
+            app:layout_constraintTop_toBottomOf="@+id/tvOfferStatic" />
+
+
+        <View
+            android:id="@+id/rvOfferItemList2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/rvOfferItemList"
+            app:layout_constraintStart_toStartOf="@+id/tvOfferStatic"
+            app:layout_constraintTop_toBottomOf="@+id/rvOfferItemList" />
+
+        <View
+            android:id="@+id/rvOfferItemList3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:backgroundTint="@color/shimmerGrey"
+            app:layout_constraintEnd_toEndOf="@+id/rvOfferItemList"
+            app:layout_constraintStart_toStartOf="@+id/tvOfferStatic"
+            app:layout_constraintTop_toBottomOf="@+id/rvOfferItemList2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

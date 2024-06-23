@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_12sdp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivNoOrder"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_speed="2"
+            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_rawRes="@raw/ic_login" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_medium"
+            android:lineSpacingExtra="10dp"
+            android:text="You must be logged in to view this feature. Please log in to your account to proceed."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivNoOrder"
+            app:layout_constraintVertical_bias="0.2" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogIn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/rounded_edit"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="Log In"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

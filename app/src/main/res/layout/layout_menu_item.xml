@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDish"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_placeholder"
+                    android:transitionName="profile" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFoodType"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:src="@drawable/veg_logo" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/llAddPlusMinus"
+                app:layout_constraintStart_toEndOf="@+id/cvImageView"
+                app:layout_constraintTop_toTopOf="@+id/cvImageView">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDishName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:maxLines="2"
+                    android:text="Panner Tikka Masala"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTimeStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="@string/not_available_at_this_time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tvDishName"
+                    app:layout_constraintTop_toBottomOf="@id/tvAmount" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="125"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@id/tvDishName"
+                    app:layout_constraintTop_toBottomOf="@id/tvDishName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOfferAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="125"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toEndOf="@+id/tvAmount"
+                    app:layout_constraintTop_toBottomOf="@id/tvDishName" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/llAddPlusMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cvImageView"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_color_round_add_to_cart"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:paddingStart="@dimen/_14sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:visibility="visible"
+                    android:weightSum="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.80"
+                        android:fontFamily="@font/cera_pro_medium"
+                        android:gravity="center"
+                        android:text="ADD"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:src="@drawable/ic_plusblack"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPlusMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_add_qty"
+                    android:paddingStart="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:visibility="gone"
+                    android:weightSum="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMinus"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:src="@drawable/ic_minus" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvQty"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:layout_weight="0.40"
+                        android:fontFamily="@font/cera_pro_bold"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPlus"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.30"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                        android:paddingStart="@dimen/_3sdp"
+                        android:paddingEnd="@dimen/_3sdp"
+                        android:src="@drawable/ic_plusblack" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

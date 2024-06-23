@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "184548838949",
+    "firebase_url": "https://gateway-restaurant.firebaseio.com",
+    "project_id": "gateway-restaurant",
+    "storage_bucket": "gateway-restaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184548838949:android:022b70a835798b530c39cc",
+        "android_client_info": {
+          "package_name": "com.example.gatewayrestaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184548838949-7natic9o8o1992h7oidfuchsjk3s1l22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-B6cSwSx0UDi3PsDmv0qReQvZgks4Lc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184548838949-7natic9o8o1992h7oidfuchsjk3s1l22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

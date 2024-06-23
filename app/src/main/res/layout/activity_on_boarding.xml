@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.OnBoarding"
+    android:padding="@dimen/_16sdp">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SKIP"
+        tools:ignore="MissingConstraints,OnClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="skip"
+        android:background="#00000000"
+        android:padding="@dimen/_5sdp"
+        android:drawableEnd="@drawable/skip_icon"
+        android:drawableRight="@drawable/skip_icon" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="@dimen/_30sdp"
+            android:background="#00000000"
+            android:onClick="next"
+            android:drawableEnd="@drawable/next_btn1"
+            android:drawableRight="@drawable/next_btn1"
+            android:visibility="visible"
+             />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/get_started_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let get started"
+            android:background="@color/colorPrimary"
+            android:visibility="invisible"
+            />
+
+        <LinearLayout
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

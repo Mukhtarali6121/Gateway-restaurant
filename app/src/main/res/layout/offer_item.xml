@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="@dimen/_140sdp"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOfferImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_90sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemOfferName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="MENU TITLE"
+            android:textColor="#000"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivOfferImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRealPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line"
+            android:fontFamily="@font/cera_pro_medium"
+            android:padding="@dimen/_2sdp"
+            android:text="200"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@+id/tvItemOfferName"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemOfferName" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDiscountPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_toEndOf="@+id/tvRealPrice"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="200"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRealPrice"
+            app:layout_constraintStart_toEndOf="@+id/tvRealPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvRealPrice" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/nav_cart"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRealPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemOfferName" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

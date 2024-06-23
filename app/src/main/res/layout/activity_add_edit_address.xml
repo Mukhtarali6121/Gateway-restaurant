@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.AddEditAddressActivity">
+
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/common_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddressList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            app:layout_constraintVertical_bias="0"
+            tools:listitem="@layout/address_view"
+            android:visibility="gone"
+            tools:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivNoAddress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.4"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/location" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cera_pro_medium"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:lineSpacingExtra="@dimen/_4sdp"
+            android:text="@string/address_book_page_desc"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivNoAddress" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/rounded_button_accent"
+            android:clickable="true"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:focusable="true"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            android:fontFamily="@font/cera_pro_bold"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            android:text="Add Address"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <include
+            android:id="@+id/noLogIn"
+            layout="@layout/common_no_login"
+            android:visibility="gone"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerAddress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/x_item_address_shimmer_layout" />
+
+                <include layout="@layout/x_item_address_shimmer_layout" />
+
+                <include layout="@layout/x_item_address_shimmer_layout" />
+
+                <include layout="@layout/x_item_address_shimmer_layout" />
+
+
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

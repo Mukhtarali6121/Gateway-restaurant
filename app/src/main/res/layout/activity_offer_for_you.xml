@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.OfferForYouActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/common_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDishList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            tools:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0"
+            tools:itemCount="3"
+            tools:listitem="@layout/southindiancardview" />
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerMenu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+                <include layout="@layout/menu_list_shimmer" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

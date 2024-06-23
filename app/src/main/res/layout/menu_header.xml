@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp"
+    android:background="@color/lightwhite"
+    android:paddingLeft="@dimen/_15sdp"
+    >
+
+    <View
+        android:id="@+id/view"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="@dimen/_282sdp"
+        android:layout_alignParentBottom="true"
+        android:foregroundGravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="3dp"
+        android:background="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/menu_slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delivery_to_your_door_step"
+        android:layout_above="@+id/view"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:textSize="@dimen/_10ssp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Hotel_name"
+        android:textSize="@dimen/_20ssp"
+        android:layout_above="@+id/menu_slogan"
+        android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/_4sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/restaurant_logo"
+        android:layout_above="@id/app_name"
+        android:layout_marginBottom="@dimen/_4sdp"
+        />
+
+
+
+</RelativeLayout>

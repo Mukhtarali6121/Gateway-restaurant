@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/provide_feedback_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Provide your Feedback"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rbRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyle"
+            android:numStars="5"
+            android:progressTint="@color/colorPrimary"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/feeback_sub_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <!--<androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/gateway_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rbRating"
+            app:layout_constraintVertical_bias="1" />-->
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/feeback_sub_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/cera_pro_medium"
+            android:textAlignment="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Your feedback on this order would be greatly appreciated and will help us improve our service."
+            android:textColor="@color/colorLightBlack"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/provide_feedback_label" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_drawable"
+            android:fontFamily="@font/cera_pro_medium"
+            android:gravity="top"
+            android:hint="Share your experience with us"
+            android:inputType="textMultiLine|textVisiblePassword"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ',.!?()-:\n"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorLightBlack"
+            android:textColorHint="@color/colorGrey"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rbRating" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comment">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:fontFamily="@font/cera_pro_medium"
+                android:padding="16dp"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_accent"
+                android:fontFamily="@font/cera_pro_medium"
+                android:padding="16dp"
+                android:text="Send"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

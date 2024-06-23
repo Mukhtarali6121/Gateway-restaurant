@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Gateway Restaurant</string>
+
+    //Heading
+    <string name="first_slide_title">Fresh Everything</string>
+    <string name="second_slide_title">Home Delivery</string>
+    <string name="third_slide_title">Easy Payment</string>
+
+    //description
+    <string name="first_slide_desc">Everything you will experience will be absolutely fresh</string>
+    <string name="second_slide_desc">All you need to do is order your favourite food from your device</string>
+    <string name="third_slide_desc">Paytm and Cash on delivery are available for your ease</string>
+
+    <string name="Hotel_name">Gateway Restaurant</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="warningLogout">Are you sure you want to logout from this app?</string>
+    <string name="add_to_cart">+ Add</string>
+    <string name="aaa">takeaway</string>
+    <string name="restaurant_address"><![CDATA[17, Raigad Military School & Commercial Building, Oshiwara, New Link Road, Anand Nagar, Andheri West, Mumbai, Maharashtra 400102]]></string>
+    <string name="mobile_number_three">+91 2226311530</string>
+    <string name="mobile_number_two">+91 9833503429</string>
+    <string name="mobile_number_one">+91 90290 10005</string>
+    <string name="login_text">Login</string>
+    <string name="delivery_to_your_door_step">Delivery to your Door step.</string>
+    <string name="progress_dialog_msg">Loading..., Please Wait!.</string>
+    <string name="pay">Pay</string>
+    <string name="cash_payment">Cash Payment</string>
+    <string name="online_payment">Online Payment</string>
+    <string name="about_us_desc">Gateway Restaurant is well known with a substantial gathering of people, including families, kids, seniors, and business experts. Our benevolent condition is perfect for praising unique events, facilitating a lunch, or assembling for a flavorful dinner with loved ones. \n\n\n At Gateway fell like you are at your home. We are proud of your visit to the App. Our motto is to provide the best service experience in the city. Different tongues and different taste. We hope your each and every visit to the outlet or App will result to the end of your search for the suitable &amp; not the substitute food outlet in the town.\n\n\nAs of Today, Gateway Restaurant is still consistent with unique experience and his unique vision. In case you’re searching for top-notch food, our Restaurant is unquestionably one of the spots to go in Andheri(West). </string>
+    <string name="your_string_here"><![CDATA[This is an <u>underline</u>.]]></string>
+    <string name="category">Category</string>
+    <string name="view_all">View All</string>
+    <string name="hot_item_s">Hot Item\'s</string>
+    <string name="offer_s_for_you">Offer\'s For You</string>
+    <string name="home">Home</string>
+    <string name="we_just_need_your_registered_email_address_to_send_you_password_reset">We just need your registered email address to send you password reset.</string>
+    <string name="reset">Reset Password</string>
+    <string name="add_address_detail">Add Address Detail</string>
+    <string name="delete">Delete</string>
+    <string name="update_address">Update Address</string>
+    <string name="my_text"><u>Want To Rate This Order?</u></string>
+    <string name="log_out">Log Out</string>
+    <string name="log_in">Log In</string>
+    <string name="terms_and_condition">Terms And Conditions</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="password">Password</string>
+    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="by_proceeding_you_agree_with">By proceeding you agree with</string>
+    <string name="address_book">Address Book</string>
+    <string name="address_book_page_desc">Your address book is empty. Add an address by clicking the button below.</string>
+    <string name="my_profile">My Profile</string>
+    <string name="email_address">Email Address</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="not_available_at_this_time">Not Available at this time.</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="if_you_have_any_questions_or_concerns_please_don_t_hesitate_to_get_in_touch_with_us_you_can_reach_us_via_below_given_email_we_ll_get_back_to_you_as_soon_as_possible">If you have any questions or concerns, please don\'t hesitate to get in touch with us. You can reach us via below given email. We\'ll get back to you as soon as possible.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="home_delivery">Home Delivery</string>
+    <string name="takeaway">Takeaway</string>
+    <string name="offer_for_you">Offer For You</string>
+    <string name="cart">Cart</string>
+
+
+</resources>

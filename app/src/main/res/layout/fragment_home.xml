@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/common_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                tools:visibility="visible"
+                android:visibility="gone"
+                tools:context=".Fragment.HomeFragment">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="@string/category"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvViewAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvViewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvCategory"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCategory" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategoryList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvViewAll"
+                    app:layout_constraintStart_toStartOf="@+id/tvCategory"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPopularStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="@string/hot_item_s"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHotItemViewAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvCategoryList" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHotItemViewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvPopularStatic"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPopularStatic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvPopularStatic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPopularItemList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvHotItemViewAll"
+                    app:layout_constraintStart_toStartOf="@+id/tvPopularStatic"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPopularStatic" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOfferStatic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:text="@string/offer_s_for_you"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPopularViewAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rvPopularItemList" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPopularViewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:fontFamily="@font/cera_pro_medium"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tvOfferStatic"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOfferStatic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvOfferStatic" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOfferItemList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOfferStatic" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="gone"
+            android:layout_marginTop="?actionBarSize"
+            >
+
+            <include layout="@layout/home_fragment_shimmer_layout" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

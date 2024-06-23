@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.PaymentModeActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/common_toolbar" />
+
+        <RadioGroup
+            android:id="@+id/rgPaymentMode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbCOD"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/edittext_border"
+                android:layoutDirection="rtl"
+                android:padding="@dimen/_9sdp"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/cera_pro_bold"
+                android:text="@string/cash_payment" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbOnlinePayment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edittext_border"
+                android:layoutDirection="rtl"
+                android:visibility="gone"
+                android:fontFamily="@font/cera_pro_bold"
+                android:padding="@dimen/_9sdp"
+                android:textSize="@dimen/_13ssp"
+                android:text="@string/online_payment" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Amount Payable 420"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/cera_pro_bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnPay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_25sdp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_accent"
+            android:fontFamily="@font/cera_pro_bold"
+            android:text="@string/pay"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            android:outlineSpotShadowColor="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rgPaymentMode"
+            app:layout_constraintStart_toStartOf="@+id/rgPaymentMode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
