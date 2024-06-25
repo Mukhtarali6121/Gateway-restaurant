@@ -17,10 +17,8 @@ class NetworkConnection(private val context: Context) : LiveData<Boolean>() {
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     private var networkConnectionCallback: ConnectivityManager.NetworkCallback? = null
-
     override fun onActive() {
         super.onActive()
-
         updateNetworkConnection()
         when {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> {
