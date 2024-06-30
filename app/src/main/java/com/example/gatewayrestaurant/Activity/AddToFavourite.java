@@ -62,7 +62,7 @@ public class AddToFavourite extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        Intent intent=new Intent(AddToFavourite.this,MainActivity.class);
+        Intent intent=new Intent(AddToFavourite.this,HomePageActivity.class);
         startActivity(intent);
         finish();
     }

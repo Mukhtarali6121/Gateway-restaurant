@@ -43,7 +43,7 @@ class ProfileFragment : BaseFragment() {
 
         if (user != null) {
             mBinding.btnLogInOut.text = getString(R.string.log_out)
-            val uid = FirebaseAuth.getInstance().currentUser!!.uid
+            /*val uid = FirebaseAuth.getInstance().currentUser!!.uid
             val ref = FirebaseDatabase.getInstance().reference.child("users").child(uid)
             ref.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -59,7 +59,15 @@ class ProfileFragment : BaseFragment() {
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {}
-            })
+            })*/
+
+            val sessionManager = SessionManager(mActivity)
+            val email = sessionManager.getUserEmail()
+            val mobile = sessionManager.getUserMobile()
+            val name = sessionManager.getUserName()
+            mBinding.tvName.text = name
+            mBinding.tvEmail.text = email
+
             mBinding.cvUserInfo.visibility =View.VISIBLE
         } else {
             mBinding.btnLogInOut.text = getString(R.string.log_in)

@@ -81,8 +81,31 @@ class SessionManager(private val context: Context) {
         editor.putInt(KEY_CART_COUNT, cartCount)
         editor.commit()
     }
+    fun saveUserDetails(email: String, mobile: String, name: String) {
+        editor.putString(KEY_EMAIL, email)
+        editor.putString(KEY_MOBILE, mobile)
+        editor.putString(KEY_NAME, name)
+        editor.commit()
+    }
+
+    fun getUserEmail(): String? {
+        return pref.getString(KEY_EMAIL, null)
+    }
+
+    fun getUserMobile(): String? {
+        return pref.getString(KEY_MOBILE, null)
+    }
+
+    fun getUserName(): String? {
+        return pref.getString(KEY_NAME, null)
+    }
+
     companion object {
         private const val PREF_NAME = "GatewayRestaurant"
+        private const val KEY_EMAIL = "userEmail"
+        private const val KEY_MOBILE = "mobileNumber"
+        private const val KEY_NAME = "userName"
+
     }
 
     fun logoutUser() {

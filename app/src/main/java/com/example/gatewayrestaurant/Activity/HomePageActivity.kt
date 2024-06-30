@@ -13,27 +13,40 @@ import com.example.gatewayrestaurant.Fragment.ProfileFragment
 import com.example.gatewayrestaurant.R
 import com.example.gatewayrestaurant.Session.SessionManager
 import com.example.gatewayrestaurant.Utils.AppSettingsPref
+import com.example.gatewayrestaurant.Utils.MyApplication
 import com.example.gatewayrestaurant.Utils.NetworkConnection
 import com.example.gatewayrestaurant.databinding.ActivityHomePageBinding
 import com.example.gatewayrestaurant.model.Address
+import com.example.gatewayrestaurant.room.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomePageActivity : BaseActivity() {
 
     private lateinit var mBinding: ActivityHomePageBinding
     val fragment = HomeFragment()
     private val user = FirebaseAuth.getInstance().currentUser
+    private val userViewModel by lazy {
+        UserViewModel((application as MyApplication).database)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_home_page)
 
+
         openMainFragment()
         supportActionBar?.hide()
+
+            userViewModel.addUser("John Doe", "john@example.com")
+
+//        userViewModel.getUsers()
 
 
         if (intent.getStringExtra("toCart") == "fromCart") {
@@ -105,7 +118,7 @@ class HomePageActivity : BaseActivity() {
 
     fun refreshBadge() {
 //        val cartCount = AppSettingsPref.getIntValue(this, AppSettingsPref.CART_COUNT, 0)
-        val cartCount = sessionManager!!.getCartCount()
+        val cartCount = sessionManager.getCartCount()
         if (cartCount <= 0) {
             mBinding.bottomMenu.dismissBadge(R.id.cart)
         } else {
@@ -136,7 +149,7 @@ class HomePageActivity : BaseActivity() {
                             ).show(
                                 supportFragmentManager, "show_delete_bottomsheet"
                             )
-                            sessionManager?.setAddressBottomSheet(false)
+                            sessionManager.setAddressBottomSheet(false)
                         }
                         Log.e("hello", addressList.toString())
                     }
@@ -151,7 +164,7 @@ class HomePageActivity : BaseActivity() {
 
     override fun onResume() {
         refreshBadge()
-        if (sessionManager!!.getAddressBottomSheet()){
+        if (sessionManager.getAddressBottomSheet()){
             getAddressList()
         }
 

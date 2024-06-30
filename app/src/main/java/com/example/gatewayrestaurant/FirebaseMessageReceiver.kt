@@ -18,7 +18,6 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.gatewayrestaurant.Activity.HomePageActivity
-import com.example.gatewayrestaurant.Activity.MainActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import java.util.*
@@ -87,7 +86,7 @@ class FirebaseMessageReceiver : FirebaseMessagingService() {
         message: String
     ) {
         // Pass the intent to switch to the MainActivity
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomePageActivity::class.java)
         // Assign channel ID
         val channel_id = "notification_channel"
         // Here FLAG_ACTIVITY_CLEAR_TOP flag is set to clear

@@ -7,6 +7,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.example.gatewayrestaurant.Class.BaseActivity
 import com.example.gatewayrestaurant.R
+import com.example.gatewayrestaurant.Session.SessionManager
 import com.example.gatewayrestaurant.databinding.ActivityLoginBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -64,7 +65,7 @@ class LoginActivity : BaseActivity() {
                     mBinding.etPassword.text.toString()
                 ).addOnSuccessListener {
 
-
+                    getUserDetails()
                     FirebaseMessaging.getInstance().token.addOnSuccessListener { token: String ->
                         fcmToken = token
                     }.addOnFailureListener { e: Exception? -> }.addOnCanceledListener {}
@@ -105,7 +106,6 @@ class LoginActivity : BaseActivity() {
                     }else{
                         showShortToast(e.message.toString())
                     }
-                    Log.e("errorr",e.message.toString())
                     e.printStackTrace()
                     hideProgressDialog()
                 }
@@ -121,6 +121,25 @@ class LoginActivity : BaseActivity() {
         mBinding.tvForgotPassword.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
+    }
+    private fun getUserDetails(){
+        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+        val ref = FirebaseDatabase.getInstance().reference.child("users").child(uid)
+        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                for (postSnapshot in snapshot.children) {
+
+                    val userEmail = snapshot.child("userEmail").value.toString()
+                    val userMobileNumber = snapshot.child("mobileNumber").value.toString()
+                    val userName = snapshot.child("userName").value.toString()
+                    val sessionManager = SessionManager(this@LoginActivity)
+                    sessionManager.saveUserDetails(userEmail, userMobileNumber, userName)
+
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {}
+        })
     }
 
     private fun setUpToolbar() {

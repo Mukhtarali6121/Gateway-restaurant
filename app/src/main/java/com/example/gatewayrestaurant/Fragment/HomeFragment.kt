@@ -83,7 +83,13 @@ class HomeFragment : BaseFragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 menulist.clear()
                 for (postSnapshot in snapshot.children) {
-                    menulist.add(
+
+                    val menuModel = postSnapshot.getValue(MenuModel::class.java)
+                    if (menuModel != null) {
+                        menulist.add(menuModel)
+                    }
+
+                    /*menulist.add(
                         MenuModel(
                             name = postSnapshot.child("name").value.toString(),
                             nameLowerCase = postSnapshot.child("nameLowerCase").value.toString(),
@@ -95,10 +101,8 @@ class HomeFragment : BaseFragment() {
                             image = postSnapshot.child("image").value.toString(),
                             offerPrice = postSnapshot.child("offerPrice").value.toString(),
                             isPopular = postSnapshot.child("isPopular").value.toString(),
-
-
                             )
-                    )
+                    )*/
                 }
                 mBinding.rvPopularItemList.layoutManager = LinearLayoutManager(
                     mActivity, LinearLayoutManager.HORIZONTAL, false
@@ -124,7 +128,12 @@ class HomeFragment : BaseFragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 offerlist.clear()
                 for (postSnapshot in snapshot.children) {
-                    offerlist.add(
+                    val menuModel = postSnapshot.getValue(MenuModel::class.java)
+                    if (menuModel != null) {
+                        offerlist.add(menuModel)
+                    }
+
+                    /*offerlist.add(
                         MenuModel(
                             name = postSnapshot.child("name").value.toString(),
                             nameLowerCase = postSnapshot.child("nameLowerCase").value.toString(),
@@ -137,7 +146,7 @@ class HomeFragment : BaseFragment() {
                             isPopular = postSnapshot.child("isPopular").value.toString(),
                             offerPrice = postSnapshot.child("offerPrice").value.toString()
                         )
-                    )
+                    )*/
                 }
                 mBinding.rvOfferItemList.layoutManager = LinearLayoutManager(
                     mActivity, LinearLayoutManager.VERTICAL, false

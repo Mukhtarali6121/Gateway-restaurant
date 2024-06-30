@@ -152,7 +152,6 @@ class OrderFragment : BaseFragment() {
                                 )
                             )
                         }
-
                         orderList.add(
                             OrderModel(
                                 randomUid = postSnapshot.child("randomUid").value.toString(),
@@ -168,7 +167,6 @@ class OrderFragment : BaseFragment() {
                                 Order = orderMenuList
                             )
                         )
-
                     }
                 }
 
