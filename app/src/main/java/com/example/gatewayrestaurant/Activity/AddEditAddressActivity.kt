@@ -79,18 +79,6 @@ class AddEditAddressActivity : BaseActivity() {
         }
     }
 
-    /*private fun getData() {
-        val uid = FirebaseAuth.getInstance().currentUser!!.uid
-        val options1 =
-            FirebaseRecyclerOptions.Builder<com.example.gatewayrestaurant.model.Address>()
-                .setQuery(
-                    FirebaseDatabase.getInstance().reference.child("users").child(uid)
-                        .child("Address"), com.example.gatewayrestaurant.model.Address::class.java
-                )
-                .build()
-            addressAdapter = AddressManager(options1, this@AddEditAddressActivity,isFromProfile,false,itemCountCallBack)
-        mBinding.rvAddressList.adapter = addressAdapter
-    }*/
 
     private fun getAddressList() {
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
@@ -105,14 +93,6 @@ class AddEditAddressActivity : BaseActivity() {
                         address?.let { addressList.add(it) }
                     }
 
-                    /*mBinding.noLogIn.root.visibility = View.VISIBLE
-                    mBinding.btnAddAddress.visibility = View.GONE
-                    mBinding.rvAddressList.visibility = View.GONE
-                    mBinding.tvNoAddress.visibility = View.GONE
-                    mBinding.ivNoAddress.visibility = View.GONE
-                    mBinding.shimmerAddress.visibility = View.GONE
-                    mBinding.shimmerAddress.stopShimmer()
-*/
                     if (addressList.isNotEmpty()){
 
                         mBinding.rvAddressList.adapter = addressAdapter

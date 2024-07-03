@@ -12,4 +12,5 @@ interface UserDao {
 
     @Query("SELECT * FROM users")
     fun getAllUsers(): Flow<List<User>>
+
 }

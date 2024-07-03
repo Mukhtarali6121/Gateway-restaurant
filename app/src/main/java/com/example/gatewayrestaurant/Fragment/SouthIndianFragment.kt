@@ -5,21 +5,30 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gatewayrestaurant.Activity.HomePageActivity
 import com.example.gatewayrestaurant.Activity.TabLayoutActivity
 import com.example.gatewayrestaurant.Adapter.CategoryAdapter
 import com.example.gatewayrestaurant.Adapter.MenuAdapter
 import com.example.gatewayrestaurant.Class.BaseFragment
+import com.example.gatewayrestaurant.FirebaseRepository
 import com.example.gatewayrestaurant.R
+import com.example.gatewayrestaurant.RoomInterface.MenuDao
 import com.example.gatewayrestaurant.databinding.FragmentSouthIndianBinding
 import com.example.gatewayrestaurant.model.MenuModel
+import com.example.gatewayrestaurant.room.AppDatabase
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+// TODO: This is a dummy fagment made for roomDB
 
 
 class SouthIndianFragment : BaseFragment() {
@@ -36,6 +45,8 @@ class SouthIndianFragment : BaseFragment() {
     }
 
     var southIndianAdapter: MenuAdapter? = null
+    private lateinit var firebaseRepository: FirebaseRepository
+    private lateinit var menuDao: MenuDao
 
     private var callBack: MenuAdapter.CallBack = object : MenuAdapter.CallBack {
         override fun getCartCount(cartCount: Int) {
@@ -57,7 +68,19 @@ class SouthIndianFragment : BaseFragment() {
         )
         enableThem()
 
+        val db = AppDatabase.getDatabase(requireContext())
+        menuDao = db.menuDao()
 
+        firebaseRepository = FirebaseRepository(menuDao)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            firebaseRepository.getMenuData { menuList ->
+                // Update your UI with the menu data
+                // This callback will be called with the initial data from Room (if it exists)
+                // and then again with the latest data from Firebase.
+                Log.e("hello",menuList.toString())
+            }
+        }
         mBinding!!.rvDishList.layoutManager = LinearLayoutManager(context)
 
 

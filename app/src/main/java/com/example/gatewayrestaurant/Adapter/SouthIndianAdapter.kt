@@ -9,50 +9,63 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.gatewayrestaurant.Activity.HotItemActivity
+import com.example.gatewayrestaurant.Activity.AddEditAddressActivity
+import com.example.gatewayrestaurant.Activity.AddressActivity
+import com.example.gatewayrestaurant.Activity.HomePageActivity
 import com.example.gatewayrestaurant.Activity.LoginActivity
-import com.example.gatewayrestaurant.Activity.OfferForYouActivity
+import com.example.gatewayrestaurant.Adapter.MenuAdapter.CallBack
+import com.example.gatewayrestaurant.Adapter.MenuAdapter.MyViewHolder
 import com.example.gatewayrestaurant.Class.BaseActivity
-import com.example.gatewayrestaurant.Fragment.*
+import com.example.gatewayrestaurant.Dialogs.DeleteAddressBottomSheetFragment
 import com.example.gatewayrestaurant.R
+import com.example.gatewayrestaurant.RoomModel.MenuEntity
 import com.example.gatewayrestaurant.Session.SessionManager
 import com.example.gatewayrestaurant.Utils.AppSettingsPref
 import com.example.gatewayrestaurant.Utils.CommonSingleton
+import com.example.gatewayrestaurant.databinding.AddressViewBinding
 import com.example.gatewayrestaurant.databinding.SouthindiancardviewBinding
+import com.example.gatewayrestaurant.model.Address
 import com.example.gatewayrestaurant.model.MenuModel
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.HashMap
 
-
-class MenuAdapter(
-    options: FirebaseRecyclerOptions<MenuModel?>, private val mContext: Context, var callback: CallBack
-) :
-
-    FirebaseRecyclerAdapter<MenuModel, MenuAdapter.MyViewHolder>(options) {
-
+class SouthIndianAdapter(
+    private val menuList: ArrayList<MenuEntity>,
+    private val mContext: Context,
+    var callback: CallBack
+) : RecyclerView.Adapter<SouthIndianAdapter.MyViewHolder>() {
     val progressDialog = ProgressDialog(mContext)
-    private var session: AppSettingsPref? = null
-
     val userUid = FirebaseAuth.getInstance().currentUser?.uid
     private val mFirebaseDatabase = FirebaseDatabase.getInstance()
     private val user = FirebaseAuth.getInstance().currentUser
     private var nextAvailableFrom: String = ""
     private var nextAvailableTo: String = ""
+    private var session: AppSettingsPref? = null
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val mBinding: SouthindiancardviewBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(mContext), R.layout.southindiancardview, parent, false
+        )
+        return MyViewHolder(mBinding)
+    }
 
-    @SuppressLint("SimpleDateFormat")
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int, model: MenuModel) {
-
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 //        holder.setIsRecyclable(false)
-        session = AppSettingsPref(mContext)
+
+        val model = menuList[position]
 
         val sdf = SimpleDateFormat("hh:mm a")
         val currentTime = sdf.format(Date())
@@ -299,20 +312,22 @@ class MenuAdapter(
 
 
         }
+
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val mBinding: SouthindiancardviewBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(mContext), R.layout.southindiancardview, parent, false
-        )
-
-
-        return MyViewHolder(mBinding)
+    override fun getItemCount(): Int {
+        return menuList.size
     }
 
 
-    private fun addToCart(model: MenuModel, holder: MyViewHolder) {
+    interface CallBack {
+        fun getCartCount(cartCount: Int)
+    }
+
+    class MyViewHolder(val mBinder: SouthindiancardviewBinding) : RecyclerView.ViewHolder(mBinder.root)
+
+    private fun addToCart(model: MenuEntity, holder: MyViewHolder) {
 
         progressDialog.setMessage("Updating..., Please wait!")
         progressDialog.show()
@@ -345,7 +360,6 @@ class MenuAdapter(
 
             }
     }
-
     fun getCartCount() {
         session = AppSettingsPref(mContext)
 
@@ -364,27 +378,4 @@ class MenuAdapter(
             override fun onCancelled(error: DatabaseError) {}
         })
     }
-
-    override fun onDataChanged() {
-        super.onDataChanged()
-        SouthIndianFragment.disableThem()
-        MainCourseFragment.disableThem()
-        ChineseFragment.disableThem()
-        IndianStarterFragment.disableThem()
-        ChineseStarterFragment.disableThem()
-        RiceFragment.disableThem()
-        PavBhajiFragment.disableThem()
-        DrinksFragment.disableThem()
-        RotiFragment.disableThem()
-        HotItemActivity.disableThem()
-        OfferForYouActivity.disableThem()
-    }
-
-    interface CallBack {
-        fun getCartCount(cartCount: Int)
-    }
-
-    class MyViewHolder(var mBinder: SouthindiancardviewBinding) :
-        RecyclerView.ViewHolder(mBinder.root)
-
 }

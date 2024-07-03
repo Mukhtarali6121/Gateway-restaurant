@@ -6,17 +6,20 @@ import androidx.databinding.DataBindingUtil
 import com.example.gatewayrestaurant.Class.BaseActivity
 import com.example.gatewayrestaurant.Dialogs.NoInternetBottomSheet
 import com.example.gatewayrestaurant.Dialogs.SelectAddressBottomSheetFragment
+import com.example.gatewayrestaurant.FirebaseRepository
 import com.example.gatewayrestaurant.Fragment.CartFragment
 import com.example.gatewayrestaurant.Fragment.HomeFragment
 import com.example.gatewayrestaurant.Fragment.OrderFragment
 import com.example.gatewayrestaurant.Fragment.ProfileFragment
 import com.example.gatewayrestaurant.R
+import com.example.gatewayrestaurant.RoomInterface.MenuDao
 import com.example.gatewayrestaurant.Session.SessionManager
 import com.example.gatewayrestaurant.Utils.AppSettingsPref
 import com.example.gatewayrestaurant.Utils.MyApplication
 import com.example.gatewayrestaurant.Utils.NetworkConnection
 import com.example.gatewayrestaurant.databinding.ActivityHomePageBinding
 import com.example.gatewayrestaurant.model.Address
+import com.example.gatewayrestaurant.room.AppDatabase
 import com.example.gatewayrestaurant.room.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -32,9 +35,6 @@ class HomePageActivity : BaseActivity() {
     private lateinit var mBinding: ActivityHomePageBinding
     val fragment = HomeFragment()
     private val user = FirebaseAuth.getInstance().currentUser
-    private val userViewModel by lazy {
-        UserViewModel((application as MyApplication).database)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +44,6 @@ class HomePageActivity : BaseActivity() {
         openMainFragment()
         supportActionBar?.hide()
 
-            userViewModel.addUser("John Doe", "john@example.com")
-
-//        userViewModel.getUsers()
 
 
         if (intent.getStringExtra("toCart") == "fromCart") {
