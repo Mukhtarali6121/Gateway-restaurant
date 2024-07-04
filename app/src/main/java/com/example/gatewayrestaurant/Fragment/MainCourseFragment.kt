@@ -79,8 +79,8 @@ class MainCourseFragment : BaseFragment() {
 
         mBinding!!.rvDishList.layoutManager = LinearLayoutManager(context)
         val options = FirebaseRecyclerOptions.Builder<MenuModel>().setQuery(
-                FirebaseDatabase.getInstance().reference.child("maincourse"), MenuModel::class.java
-            ).build()
+            FirebaseDatabase.getInstance().reference.child("maincourse"), MenuModel::class.java
+        ).build()
         mainCourseAdapter = MenuAdapter(
             options, mActivity, callBack
         )
@@ -103,10 +103,13 @@ class MainCourseFragment : BaseFragment() {
     }
 
     private fun searchDish(s: String) {
+        val lowerCaseQuery = s.toLowerCase()
+
         val options1 = FirebaseRecyclerOptions.Builder<MenuModel>().setQuery(
-                FirebaseDatabase.getInstance().reference.child("maincourse").orderByChild("name")
-                    .startAt(s).endAt(s + "\uf8ff"), MenuModel::class.java
-            ).build()
+            FirebaseDatabase.getInstance().reference.child("maincourse")
+                .orderByChild("nameLowerCase").startAt(lowerCaseQuery).endAt(s + "\uf8ff"),
+            MenuModel::class.java
+        ).build()
 
         mainCourseAdapter = MenuAdapter(
             options1, mActivity, callBack

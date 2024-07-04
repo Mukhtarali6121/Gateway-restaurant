@@ -9,6 +9,7 @@ import android.text.InputFilter
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -164,17 +165,43 @@ class CartFragment : BaseFragment() {
         }
 
         mBinding.btnPlaceOrder.setOnClickListener {
-            val selectedOptionId = mBinding.parcelOption.checkedRadioButtonId
+            checkTiming()
+           /* val selectedOptionId = mBinding.parcelOption.checkedRadioButtonId
             if (selectedOptionId == -1) {
                 showShortToast("Please select Delivery Type")
             } else {
                 redirectToPayment()
-            }
+            }*/
 
         }
         return mBinding.root
     }
 
+    private fun checkTiming(){
+        val database = FirebaseDatabase.getInstance()
+        val reference = database.getReference("timing/close")
+
+        reference.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val closeTime = snapshot.getValue(String::class.java)
+                    if (closeTime != null) {
+                        // Use closeTime as needed
+                        Log.d(TAG, "Close time: $closeTime")
+                    } else {
+                        Log.d(TAG, "Close time is null")
+                    }
+                } else {
+                    Log.d(TAG, "No data found")
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e(TAG, "Failed to read value.", error.toException())
+            }
+        })
+
+    }
     fun setUpToolbar() {
         mBinding.toolbar.tvHeader.text = getString(R.string.cart)
         mBinding.toolbar.ivBack.visibility = View.GONE

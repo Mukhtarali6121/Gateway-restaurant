@@ -144,11 +144,14 @@ class SouthIndianFragment : BaseFragment() {
     }
 
     private fun searchDish(s: String) {
+        val lowerCaseQuery = s.toLowerCase()
+
         val options1 = FirebaseRecyclerOptions.Builder<MenuModel>()
             .setQuery(
                 FirebaseDatabase.getInstance().reference.child("southindian")
                     .orderByChild("nameLowerCase")
-                    .startAt(s).endAt(s + "\uf8ff"),
+                    .startAt(lowerCaseQuery)
+                    .endAt(lowerCaseQuery + "\uf8ff"),
                 MenuModel::class.java
             )
             .build()
